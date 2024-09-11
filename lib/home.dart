@@ -31,7 +31,7 @@ class ScreenHome extends StatelessWidget {
                 ElevatedButton(
                     onPressed: () {
                       final number = numberInputController.text;
-                      getOutput(number: number);
+                      getNumberFact(number: number);
                     }, child: Text('Click to submit and get data')),
                 SizedBox(height: 15),
                 Text(_resultText)
