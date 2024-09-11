@@ -1,5 +1,4 @@
 import 'package:json_annotation/json_annotation.dart';
-
 part 'get_number_fact_model.g.dart';
 
 @JsonSerializable()

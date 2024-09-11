@@ -7,7 +7,7 @@ class ScreenHome extends StatefulWidget {
   final bool isDarkMode;
   final VoidCallback onToggleDarkMode;
 
-  const ScreenHome({required this.isDarkMode, required this.onToggleDarkMode});
+  const ScreenHome({super.key, required this.isDarkMode, required this.onToggleDarkMode});
 
   @override
   State<ScreenHome> createState() => _ScreenHomeState();
