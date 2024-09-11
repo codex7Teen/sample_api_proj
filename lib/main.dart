@@ -7,13 +7,29 @@ void main() {
   runApp(MyApp());
 } 
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool isDarkMode = false;
+
+  void toggleDarkMode() {
+    setState(() {
+      isDarkMode = !isDarkMode;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: ScreenHome()
+      theme: ThemeData(
+        scaffoldBackgroundColor:isDarkMode ? Colors.black : Colors.white,
+      ),
+      home: ScreenHome(isDarkMode: isDarkMode, onToggleDarkMode: toggleDarkMode,)
     );
   }
 }
