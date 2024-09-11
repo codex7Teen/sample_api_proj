@@ -7,7 +7,7 @@ class ScreenHome extends StatefulWidget {
   final bool isDarkMode;
   final VoidCallback onToggleDarkMode;
 
-   ScreenHome({required this.isDarkMode, required this.onToggleDarkMode});
+  ScreenHome({required this.isDarkMode, required this.onToggleDarkMode});
 
   @override
   State<ScreenHome> createState() => _ScreenHomeState();
@@ -30,10 +30,25 @@ class _ScreenHomeState extends State<ScreenHome> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              IconButton(onPressed: () {
-                widget.onToggleDarkMode();
-              }, icon: Icon(Icons.light_mode_outlined, size: 30,)),
-              SizedBox(height: 20,),              TextField(
+              Text(
+                'Enter a number and you can get the feature of that number...',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                height: 100,
+              ),
+              IconButton(
+                  onPressed: () {
+                    widget.onToggleDarkMode();
+                  },
+                  icon: Icon(
+                    Icons.light_mode_outlined,
+                    size: 30,
+                  )),
+              SizedBox(
+                height: 20,
+              ),
+              TextField(
                 controller: numberInputController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
@@ -51,7 +66,10 @@ class _ScreenHomeState extends State<ScreenHome> {
                   },
                   child: Text('Click to submit and get data')),
               SizedBox(height: 15),
-              Text(_resultText)
+              Text(
+                _resultText,
+                style: TextStyle(fontWeight: FontWeight.bold),
+              )
             ],
           ),
         ));
